@@ -1,0 +1,24 @@
+# gsDesign2 R Package Documentation
+
+## Overview
+
+gsDesign2 is the next generation group sequential design package with modern R implementation and enhanced capabilities for complex trial designs.
+
+## Key Functions
+
+- gs_design_ahr(): Design for average hazard ratio
+- gs_design_nph(): Design for non-proportional hazards
+- gs_power_ahr(): Power calculations for average hazard ratio
+- define_enroll_rate(): Define enrollment rates
+- define_fail_rate(): Define failure rates
+- gs_design_combo(): Multiple endpoint designs
+
+## Example Usage
+
+library(gsDesign2)
+design <- gs_design_ahr(
+  enroll_rate = define_enroll_rate(duration = 18, rate = 1),
+  fail_rate = define_fail_rate(duration = c(4, 100), fail_rate = log(2) / 12, hr = c(1, 0.7)),
+  alpha = 0.025,
+  beta = 0.1
+)

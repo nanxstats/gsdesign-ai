@@ -1,0 +1,21 @@
+# simtrial R Package Documentation
+
+## Overview
+
+simtrial provides comprehensive simulation capabilities for clinical trials with time-to-event endpoints, enabling validation of trial designs and assessment of operating characteristics.
+
+## Key Functions
+
+- sim_pw_surv(): Simulate piecewise survival data
+- sim_gs_n(): Simulate group sequential trials
+- sim_fixed_n(): Simulate fixed sample size trials
+- define_enroll_rate(): Define enrollment patterns
+- define_fail_rate(): Define failure and dropout rates
+- operating_characteristics(): Calculate trial performance metrics
+
+## Example Usage
+
+library(simtrial)
+enroll_rate <- define_enroll_rate(duration = 18, rate = 20)
+fail_rate <- define_fail_rate(duration = c(4, 100), fail_rate = log(2) / 12, hr = c(1, 0.7))
+sim_results <- sim_pw_surv(n_sim = 1000, study_duration = 36, enroll_rate = enroll_rate, fail_rate = fail_rate)

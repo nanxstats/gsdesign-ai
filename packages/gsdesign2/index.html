@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gsDesign2 - gsDesign documentation for AI code editors</title>
+    <meta name="description"
+        content="Next generation group sequential design with modern R implementation">
+
+    <meta name="generator" content="Hugo 0.122.0">
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+    
+
+    
+</head>
+
+<body class="flex min-h-screen flex-col bg-stone-50">
+    <div class="absolute inset-x-0 top-0 -z-10 h-[260px] bg-gradient-to-b from-primary-600/[0.08] to-transparent"></div>
+
+    <header class="sticky top-0 z-10 bg-stone-50/80 backdrop-blur-sm">
+    <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between border-b border-stone-200 px-4 lg:px-8">
+        <div class="flex items-center gap-8">
+            <a href="https://gsdesign.ai/" class="flex items-center gap-2">
+                <div
+                    class="flex h-10 items-center justify-center rounded-md border border-stone-300 bg-white px-2 transition-colors hover:bg-stone-50">
+                    <img src="/images/logo.png" alt="gsDesign documentation for AI code editors" class="h-7 w-6">
+                    <span class="px-2 text-base font-semibold text-stone-800">gsDesign.ai</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6">
+                
+                
+                <a href="/about/"
+                    class="text-sm font-medium text-stone-600 transition-colors hover:text-primary-600">
+                    About
+                </a>
+                
+                
+                
+                <span class="text-sm font-medium text-stone-400 cursor-not-allowed">
+                    MCP Server (coming soon)
+                </span>
+                
+                
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="https://github.com/keaven/gsDesign" target="_blank" rel="noopener noreferrer"
+                class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-stone-600 transition-colors hover:text-primary-600">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+            </a>
+
+            <a href="https://github.com/nanxstats/gsdesign-ai/issues" target="_blank" rel="noopener noreferrer"
+                class="btn-primary">
+                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                Add Package
+            </a>
+
+            <button class="md:hidden p-2 text-stone-600 hover:text-stone-800" id="mobile-menu-toggle">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="hidden md:hidden border-b border-stone-200 bg-white" id="mobile-menu">
+        <nav class="flex flex-col p-4">
+            
+            
+            <a href="/about/"
+                class="py-2 text-sm font-medium text-stone-600 transition-colors hover:text-primary-600">
+                About
+            </a>
+            
+            
+            
+            <span class="py-2 text-sm font-medium text-stone-400 cursor-not-allowed">
+                MCP Server (coming soon)
+            </span>
+            
+            
+            <a href="https://github.com/keaven/gsDesign" target="_blank" rel="noopener noreferrer"
+                class="py-2 text-sm font-medium text-stone-600 transition-colors hover:text-primary-600">
+                GitHub
+            </a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+    <main class="flex-grow">
+        
+<div class="mx-auto max-w-4xl px-4 py-16 lg:px-8">
+    
+    <div class="mb-8">
+        <h1 class="text-4xl font-bold text-stone-900">gsDesign2</h1>
+        
+        <p class="mt-3 text-xl text-stone-600">Next generation group sequential design with modern R implementation</p>
+        
+    </div>
+
+    
+    <div class="mb-8 rounded-lg border border-stone-200 bg-white p-6">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+            
+            <div>
+                <dt class="text-base font-medium text-stone-500">Version</dt>
+                <dd class="mt-1 text-base text-stone-900">1.1.5</dd>
+            </div>
+            
+
+            
+            <div>
+                <dt class="text-base font-medium text-stone-500">Repository</dt>
+                <dd class="mt-1">
+                    <a href="https://github.com/Merck/gsDesign2" target="_blank" rel="noopener noreferrer"
+                        class="text-base text-primary-600 hover:text-primary-700">
+                        GitHub
+                    </a>
+                </dd>
+            </div>
+            
+
+            
+            <div>
+                <dt class="text-base font-medium text-stone-500">CRAN</dt>
+                <dd class="mt-1">
+                    <a href="https://cran.r-project.org/package=gsDesign2" target="_blank" rel="noopener noreferrer"
+                        class="text-base text-primary-600 hover:text-primary-700">
+                        View on CRAN
+                    </a>
+                </dd>
+            </div>
+            
+
+            <div>
+                <dt class="text-base font-medium text-stone-500">Documentation</dt>
+                <dd class="mt-1">
+                    <a href="llms.txt"
+                        class="text-base text-primary-600 hover:text-primary-700">
+                        llms.txt
+                    </a>
+                </dd>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="rounded-lg border border-stone-200 bg-white">
+        <div class="flex items-center justify-between border-b border-stone-200 px-4 py-3">
+            <h2 class="text-base font-medium text-stone-900">Documentation</h2>
+            <div class="flex items-center gap-2">
+                <a href="llms.txt"
+                    class="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Raw
+                </a>
+                <button id="copy-button"
+                    class="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <textarea id="documentation-content" readonly
+                class="w-full resize-none border-0 bg-stone-50 p-4 font-mono text-base text-stone-800 focus:outline-none"
+                rows="20"># gsDesign2 R Package Documentation
+
+## Overview
+
+gsDesign2 is the next generation group sequential design package with modern R implementation and enhanced capabilities for complex trial designs.
+
+## Key Functions
+
+- gs_design_ahr(): Design for average hazard ratio
+- gs_design_nph(): Design for non-proportional hazards
+- gs_power_ahr(): Power calculations for average hazard ratio
+- define_enroll_rate(): Define enrollment rates
+- define_fail_rate(): Define failure rates
+- gs_design_combo(): Multiple endpoint designs
+
+## Example Usage
+
+library(gsDesign2)
+design &lt;- gs_design_ahr(
+  enroll_rate = define_enroll_rate(duration = 18, rate = 1),
+  fail_rate = define_fail_rate(duration = c(4, 100), fail_rate = log(2) / 12, hr = c(1, 0.7)),
+  alpha = 0.025,
+  beta = 0.1
+)
+</textarea>
+        </div>
+    </div>
+
+    
+    <details class="mt-8">
+        <summary class="cursor-pointer text-base font-medium text-stone-600 hover:text-stone-900">
+            View detailed documentation
+        </summary>
+        <div class="mt-4 rounded-lg border border-stone-200 bg-white p-8">
+            <div class="prose prose-stone max-w-none">
+                <h2 id="overview">Overview</h2>
+<p>gsDesign2 is the next generation of group sequential design tools, built with modern R practices and enhanced capabilities. It provides a comprehensive framework for designing and analyzing group sequential trials with improved performance and flexibility.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Install from CRAN</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;gsDesign2&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install development version from GitHub</span>
+</span></span><span style="display:flex;"><span>devtools<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;Merck/gsDesign2&#34;</span>)
+</span></span></code></pre></div><h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Modern R Implementation</strong>: Built with tidyverse principles and modern R best practices</li>
+<li><strong>Enhanced Performance</strong>: Optimized calculations for faster execution</li>
+<li><strong>Flexible Design Framework</strong>: Support for various trial designs and endpoints</li>
+<li><strong>Integration Ready</strong>: Seamless integration with other statistical packages</li>
+<li><strong>Comprehensive Testing</strong>: Extensive unit testing and validation</li>
+</ul>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="creating-a-design">Creating a Design</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(gsDesign2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a group sequential design</span>
+</span></span><span style="display:flex;"><span>design <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gs_design_ahr</span>(
+</span></span><span style="display:flex;"><span>  enroll_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">define_enroll_rate</span>(duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>  fail_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">define_fail_rate</span>(duration <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">100</span>), fail_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">12</span>, hr <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.7</span>)),
+</span></span><span style="display:flex;"><span>  alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.025</span>,
+</span></span><span style="display:flex;"><span>  beta <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
+</span></span><span style="display:flex;"><span>  ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># View the design</span>
+</span></span><span style="display:flex;"><span>design
+</span></span></code></pre></div><h3 id="power-calculations">Power Calculations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Calculate power for different scenarios</span>
+</span></span><span style="display:flex;"><span>power_calc <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gs_power_ahr</span>(
+</span></span><span style="display:flex;"><span>  enroll_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">define_enroll_rate</span>(duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>  fail_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">define_fail_rate</span>(duration <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">100</span>), fail_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">12</span>, hr <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.7</span>)),
+</span></span><span style="display:flex;"><span>  event <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">400</span>),
+</span></span><span style="display:flex;"><span>  analysis_time <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">24</span>, <span style="color:#ae81ff">36</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="non-proportional-hazards">Non-Proportional Hazards</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Design for non-proportional hazards</span>
+</span></span><span style="display:flex;"><span>nph_design <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gs_design_nph</span>(
+</span></span><span style="display:flex;"><span>  enroll_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">define_enroll_rate</span>(duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>  fail_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">define_fail_rate</span>(
+</span></span><span style="display:flex;"><span>    duration <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>    fail_rate <span style="color:#f92672">=</span> <span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">12</span>,
+</span></span><span style="display:flex;"><span>    hr <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.8</span>, <span style="color:#ae81ff">0.6</span>)
+</span></span><span style="display:flex;"><span>  ),
+</span></span><span style="display:flex;"><span>  alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.025</span>,
+</span></span><span style="display:flex;"><span>  beta <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="multiple-endpoints">Multiple Endpoints</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Design with multiple endpoints</span>
+</span></span><span style="display:flex;"><span>multi_endpoint <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gs_design_combo</span>(
+</span></span><span style="display:flex;"><span>  alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.025</span>,
+</span></span><span style="display:flex;"><span>  beta <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
+</span></span><span style="display:flex;"><span>  endpoints <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
+</span></span><span style="display:flex;"><span>    primary <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ahr&#34;</span>, hr <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.7</span>),
+</span></span><span style="display:flex;"><span>    secondary <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;binary&#34;</span>, or <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.8</span>)
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Use Modern Syntax</strong>: Leverage the new functional programming approach</li>
+<li><strong>Validate Assumptions</strong>: Check design assumptions with sensitivity analyses</li>
+<li><strong>Document Thoroughly</strong>: Maintain clear documentation of all design decisions</li>
+<li><strong>Test Scenarios</strong>: Use simulation capabilities for robust design validation</li>
+</ol>
+<h2 id="common-applications">Common Applications</h2>
+<ul>
+<li>Oncology trials with non-proportional hazards</li>
+<li>Immunotherapy studies</li>
+<li>Adaptive trial designs</li>
+<li>Platform trials</li>
+<li>Multi-arm studies</li>
+</ul>
+<h2 id="integration-with-other-packages">Integration with Other Packages</h2>
+<p>gsDesign2 works well with:</p>
+<ul>
+<li><code>gt</code>: For beautiful table formatting</li>
+<li><code>ggplot2</code>: For advanced visualizations</li>
+<li><code>dplyr</code>: For data manipulation</li>
+<li><code>tibble</code>: For modern data structures</li>
+</ul>
+
+            </div>
+        </div>
+    </details>
+</div>
+
+<script>
+document.getElementById('copy-button').addEventListener('click', function() {
+    const textarea = document.getElementById('documentation-content');
+    const text = textarea.value;
+
+    navigator.clipboard.writeText(text).then(function() {
+        const button = document.getElementById('copy-button');
+        const originalHTML = button.innerHTML;
+        button.innerHTML = `
+            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Copied!
+        `;
+        setTimeout(function() {
+            button.innerHTML = originalHTML;
+        }, 2000);
+    });
+});
+
+
+const textarea = document.getElementById('documentation-content');
+textarea.style.height = 'auto';
+textarea.style.height = textarea.scrollHeight + 'px';
+</script>
+
+    </main>
+
+    <footer class="mt-auto w-full bg-stone-50">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+        <div class="flex flex-col items-center justify-between gap-4 border-t border-stone-200 py-8 md:flex-row">
+            <div class="text-sm text-stone-600">
+                © 2025 gsDesign.ai. Documentation for AI code editors.
+            </div>
+
+            <div class="flex items-center gap-6 text-sm">
+                <a href="https://github.com/keaven/gsDesign" target="_blank" rel="noopener noreferrer"
+                    class="link-underline">
+                    gsDesign R Package
+                </a>
+                <a href="https://cran.r-project.org/package=gsDesign" target="_blank" rel="noopener noreferrer"
+                    class="link-underline">
+                    CRAN
+                </a>
+                <a href="/about" class="link-underline">
+                    About
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="fixed bottom-6 right-6 z-50">
+    <a href="https://github.com/keaven/gsDesign/issues" target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 rounded-full bg-stone-800 px-4 py-2.5 text-sm text-white shadow-xl transition-all hover:bg-stone-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="16" height="16" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path
+                d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z" />
+        </svg>
+        Report Issue
+    </a>
+</div>
+
+    
+</body>
+
+</html>

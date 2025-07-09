@@ -15,6 +15,20 @@
       <description>Overview The gsDesign package provides comprehensive tools for group sequential clinical trial design. It supports both superiority and non-inferiority designs with various spending function options.&#xA;Installation # Install from CRAN install.packages(&amp;#34;gsDesign&amp;#34;) # Install development version from GitHub devtools::install_github(&amp;#34;keaven/gsDesign&amp;#34;) Key Features Flexible Spending Functions: O&amp;rsquo;Brien-Fleming, Pocock, and custom spending functions Sample Size Calculation: Automated sample size and power calculations Interim Analysis Planning: Design trials with multiple interim analyses Boundary Crossing Probabilities: Calculate probabilities under various scenarios Graphics: Built-in plotting functions for visualizing designs Basic Usage Creating a Simple Design library(gsDesign) # Create a group sequential design with 3 analyses design &amp;lt;- gsDesign( k = 3, # Number of analyses test.</description>
     </item>
     <item>
+      <title>gsDesign2</title>
+      <link>https://gsdesign.ai/packages/gsdesign2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://gsdesign.ai/packages/gsdesign2/</guid>
+      <description>Overview gsDesign2 is the next generation of group sequential design tools, built with modern R practices and enhanced capabilities. It provides a comprehensive framework for designing and analyzing group sequential trials with improved performance and flexibility.&#xA;Installation # Install from CRAN install.packages(&amp;#34;gsDesign2&amp;#34;) # Install development version from GitHub devtools::install_github(&amp;#34;Merck/gsDesign2&amp;#34;) Key Features Modern R Implementation: Built with tidyverse principles and modern R best practices Enhanced Performance: Optimized calculations for faster execution Flexible Design Framework: Support for various trial designs and endpoints Integration Ready: Seamless integration with other statistical packages Comprehensive Testing: Extensive unit testing and validation Basic Usage Creating a Design library(gsDesign2) # Create a group sequential design design &amp;lt;- gs_design_ahr( enroll_rate = define_enroll_rate(duration = 18, rate = 1), fail_rate = define_fail_rate(duration = c(4, 100), fail_rate = log(2) / 12, hr = c(1, 0.</description>
+    </item>
+    <item>
+      <title>simtrial</title>
+      <link>https://gsdesign.ai/packages/simtrial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://gsdesign.ai/packages/simtrial/</guid>
+      <description>Overview simtrial provides comprehensive simulation capabilities for clinical trials with time-to-event endpoints. It enables researchers to validate trial designs, assess operating characteristics, and optimize study parameters through Monte Carlo simulation.&#xA;Installation # Install from CRAN install.packages(&amp;#34;simtrial&amp;#34;) # Install development version from GitHub devtools::install_github(&amp;#34;Merck/simtrial&amp;#34;) Key Features Flexible Simulation Framework: Simulate various trial designs and scenarios Time-to-Event Focus: Specialized for survival and time-to-event endpoints Operating Characteristics: Comprehensive evaluation of design performance Scenario Analysis: Test multiple assumptions and design variations Integration: Works seamlessly with gsDesign and gsDesign2 Basic Usage Simple Simulation library(simtrial) # Define trial parameters enroll_rate &amp;lt;- define_enroll_rate(duration = 18, rate = 20) fail_rate &amp;lt;- define_fail_rate( duration = c(4, 100), fail_rate = log(2) / 12, hr = c(1, 0.</description>
+    </item>
+    <item>
       <title>About gsDesign.ai</title>
       <link>https://gsdesign.ai/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
