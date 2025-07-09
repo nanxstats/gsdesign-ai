@@ -1,7 +1,7 @@
 # gsdesign.ai
 
-Up-to-date documentation for gsDesign and related R packages for
-clinical trial design and simulation. Optimized for AI code editors.
+Up-to-date documentation of clinical trial design and simulation packages
+for LLMs and AI coding tools.
 
 ## Building the site
 
