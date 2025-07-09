@@ -7,6 +7,10 @@
 .RData
 .Ruserdata
 
+# renv
+.Rprofile
+/renv/
+
 # Hugo generated files
 /public/
 /resources/_gen/
