@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-    <header class="mb-12 text-center">
+    <header class="mb-12">
         <h1 class="text-4xl font-bold text-stone-900">{{ .Title }}</h1>
         {{ if .Content }}
-        <div class="prose prose-stone mx-auto mt-6 max-w-2xl">
+        <div class="prose prose-stone mt-6">
             {{ .Content }}
         </div>
         {{ end }}
