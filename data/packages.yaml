@@ -8,7 +8,7 @@
 - id: gsdesign2
   name: gsDesign2
   description: "Next generation group sequential design with modern R implementation"
-  version: "1.1.0"
+  version: "1.1.5"
   lastUpdated: "June 2025"
   icon: "/images/gsdesign2-logo.png"
 
