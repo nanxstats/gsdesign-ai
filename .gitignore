@@ -1,6 +1,12 @@
 # Claude
 /.claude/
 
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
 # Hugo generated files
 /public/
 /resources/_gen/
