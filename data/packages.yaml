@@ -1,0 +1,20 @@
+- id: gsdesign
+  name: gsDesign
+  description: "Group sequential design for clinical trials with time-to-event endpoints"
+  version: "3.6.9"
+  lastUpdated: "June 2025"
+  icon: "/images/gsdesign-logo.png"
+
+- id: gsdesign2
+  name: gsDesign2
+  description: "Next generation group sequential design with modern R implementation"
+  version: "1.1.0"
+  lastUpdated: "June 2025"
+  icon: "/images/gsdesign2-logo.png"
+
+- id: simtrial
+  name: simtrial
+  description: "Clinical trial simulation for time-to-event endpoints"
+  version: "1.0.0"
+  lastUpdated: "June 2025"
+  icon: "/images/simtrial-logo.png"

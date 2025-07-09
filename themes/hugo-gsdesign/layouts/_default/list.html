@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold text-stone-900">{{ .Title }}</h1>
+        {{ if .Content }}
+        <div class="prose prose-stone mx-auto mt-6 max-w-2xl">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {{ range .Pages }}
+        <a href="{{ .Permalink }}" class="package-card block">
+            <h2 class="text-xl font-semibold text-stone-900 group-hover:text-primary-600 transition-colors">
+                {{ .Title }}
+            </h2>
+
+            {{ if .Description }}
+            <p class="mt-2 text-sm text-stone-600">
+                {{ .Description }}
+            </p>
+            {{ end }}
+
+            <div class="mt-4 text-xs text-stone-500">
+                {{ if .Date }}
+                Updated {{ .Date.Format "Jan 2, 2006" }}
+                {{ end }}
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

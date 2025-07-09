@@ -1,0 +1,58 @@
+# Claude
+/.claude/
+
+# Hugo generated files
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Node.js dependencies and files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Build outputs
+dist/
+build/
+
+# Hugo theme build artifacts
+themes/*/node_modules/
+themes/*/package-lock.json
+
+# Tailwind CSS generated output (keeping only source?)
+# Note: style.css is generated from input.css, so it's optional to ignore
+# themes/hugo-gsdesign/static/css/style.css

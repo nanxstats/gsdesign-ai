@@ -1,0 +1,12 @@
+{
+  "name": "hugo-gsdesign",
+  "version": "1.0.0",
+  "description": "Hugo theme for gsDesign.ai",
+  "scripts": {
+    "build-css": "tailwindcss -i ./static/css/input.css -o ./static/css/style.css --minify",
+    "watch-css": "tailwindcss -i ./static/css/input.css -o ./static/css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

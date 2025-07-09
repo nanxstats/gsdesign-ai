@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+
+    {{ hugo.Generator }}
+
+    <link rel="icon" href="{{ "images/favicon.ico" | relURL }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+    {{ block "head" . }}{{ end }}
+
+    {{ with .Site.Params.googleAnalytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ . }}');
+    </script>
+    {{ end }}
+</head>
+
+<body class="flex min-h-screen flex-col bg-stone-50">
+    <div class="absolute inset-x-0 top-0 -z-10 h-[260px] bg-gradient-to-b from-primary-600/[0.08] to-transparent"></div>
+
+    {{ partial "header.html" . }}
+
+    <main class="flex-grow">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    {{ block "scripts" . }}{{ end }}
+</body>
+
+</html>
