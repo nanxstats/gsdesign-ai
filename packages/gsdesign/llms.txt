@@ -1,0 +1,17 @@
+# gsDesign R Package Documentation
+
+## Overview
+
+The gsDesign package provides comprehensive tools for group sequential clinical trial design.
+
+## Key Functions
+
+- gsDesign(): Create group sequential designs
+- gsSurv(): Design for survival endpoints
+- nSurv(): Sample size calculation for survival trials
+- gsCP(): Conditional power calculations
+
+## Example Usage
+
+library(gsDesign)
+design <- gsDesign(k = 3, test.type = 1, alpha = 0.025, beta = 0.1)
