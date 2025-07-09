@@ -1,1 +1,0 @@
-# gsdesign.ai
