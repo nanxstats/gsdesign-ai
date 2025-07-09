@@ -1,7 +1,7 @@
 ---
 title: "gsDesign"
 description: "Group sequential design for clinical trials"
-version: "3.5.0"
+version: "3.6.9"
 repository: "https://github.com/keaven/gsDesign"
 cran: "https://cran.r-project.org/package=gsDesign"
 weight: 1
