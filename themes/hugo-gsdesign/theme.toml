@@ -1,6 +1,5 @@
 name = "Hugo gsDesign"
 license = "MIT"
-licenselink = "https://github.com/keaven/gsDesign/blob/main/LICENSE"
 description = "A Hugo theme for gsDesign.ai"
 homepage = "https://gsdesign.ai/"
 tags = ["documentation", "ai", "clinical-trials", "statistics"]
@@ -8,5 +7,5 @@ features = ["tailwindcss", "responsive", "ai-optimized"]
 min_version = "0.112.0"
 
 [author]
-  name = "gsDesign authors"
-  homepage = "https://github.com/keaven/gsDesign"
+  name = "gsDesign.ai authors"
+  homepage = "https://github.com/nanxstats/gsdesign-ai"

@@ -1,6 +1,6 @@
 # gsdesign.ai
 
-Up-to-date documentation of clinical trial design and simulation packages
+Latest documentation of clinical trial design and simulation packages
 for LLMs and AI coding tools.
 
 ## Building the site

@@ -26,9 +26,11 @@ params:
     url: images/logo.png
     width: 50
   googleAnalytics: ''
-  description: 'Up-to-date documentation of clinical trial design and simulation packages for LLMs and AI coding tools'
+  description: 'Latest documentation of clinical trial design and simulation packages for LLMs and AI coding tools'
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
     renderer:
       unsafe: yes
+  highlight:
+    style: catppuccin-mocha
