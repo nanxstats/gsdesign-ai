@@ -77,8 +77,8 @@
         </div>
         <div class="relative">
             <textarea id="documentation-content" readonly
-                class="w-full resize-none border-0 bg-stone-50 p-4 font-mono text-base text-stone-800 focus:outline-none"
-                rows="20">{{ readFile (printf "%s/llms.txt" .File.Dir) }}</textarea>
+                class="w-full resize-none border-0 bg-stone-50 p-4 font-mono text-base text-stone-800 focus:outline-none overflow-y-auto"
+                rows="17">{{ readFile (printf "%s/llms.txt" .File.Dir) }}</textarea>
         </div>
     </div>
 
@@ -115,9 +115,12 @@ document.getElementById('copy-button').addEventListener('click', function() {
     });
 });
 
-// Adjust textarea height based on content
+// Set fixed height for textarea with scrollbar
 const textarea = document.getElementById('documentation-content');
-textarea.style.height = 'auto';
-textarea.style.height = textarea.scrollHeight + 'px';
+// Calculate height for 17 lines (line-height * rows + padding)
+const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight);
+const padding = parseInt(window.getComputedStyle(textarea).paddingTop) * 2;
+textarea.style.height = (lineHeight * 17 + padding) + 'px';
+textarea.style.overflowY = 'auto';
 </script>
 {{ end }}
