@@ -187,8 +187,8 @@
         </div>
         <div class="relative">
             <textarea id="documentation-content" readonly
-                class="w-full resize-none border-0 bg-stone-50 p-4 font-mono text-base text-stone-800 focus:outline-none"
-                rows="20">FUNCTION: as_gt 
+                class="w-full resize-none border-0 bg-stone-50 p-4 font-mono text-base text-stone-800 focus:outline-none overflow-y-auto"
+                rows="17">FUNCTION: as_gt 
 TITLE: Convert a summary table object to a gt object 
 DESCRIPTION: 
 Convert a summary table object created with \code{\link{as_table}}
@@ -4242,8 +4242,11 @@ document.getElementById('copy-button').addEventListener('click', function() {
 
 
 const textarea = document.getElementById('documentation-content');
-textarea.style.height = 'auto';
-textarea.style.height = textarea.scrollHeight + 'px';
+
+const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight);
+const padding = parseInt(window.getComputedStyle(textarea).paddingTop) * 2;
+textarea.style.height = (lineHeight * 17 + padding) + 'px';
+textarea.style.overflowY = 'auto';
 </script>
 
     </main>
